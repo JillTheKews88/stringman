@@ -15,7 +15,9 @@ class Program
                 {
                     if (j == 2 || j == 3)
                     {
-                        Console.WriteLine(values[j]);
+                    
+                        string newJ = values[j].Replace(".", string.Empty);
+                        Console.WriteLine(newJ);
                     }
                     //Console.WriteLine(values[j]);
                 }
