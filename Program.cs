@@ -39,14 +39,24 @@ class Program
                                 values[j] = newJ;
                             }
                         }
-                        Console.WriteLine(values[j]);
+                        //Console.WriteLine(values[j]);
                     }
-                    Console.WriteLine("Counter: " + counter);
                     values.Add(values[2] + "," + values[3]);
                     counter++;
+                    //Console.WriteLine(values[2] + "," + values[3]);
+                    //Console.WriteLine("Counter: " + counter);
+                }
+                string newLine = "";
+                for(int m = 0; m < values.Count; m++)
+                {
+                    newLine += values[m] + ";" ;
+                }
+                Console.WriteLine(newLine + "\n");
+                using(StreamWriter writer = new StreamWriter("newCSV.csv"))
+                {
 
                 }
-            }
+            } 
         }
         Console.ReadLine();
     }
