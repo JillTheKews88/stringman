@@ -5,6 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        File.Delete("newCSV.csv");
         using (var reader = new StreamReader("flyvning1.csv"))
         {
             int counter = 0;
@@ -52,9 +53,9 @@ class Program
                     newLine += values[m] + ";" ;
                 }
                 Console.WriteLine(newLine + "\n");
-                using(StreamWriter writer = new StreamWriter("newCSV.csv"))
+                using(StreamWriter writer = File.AppendText("newCSV.csv"))
                 {
-
+                    writer.WriteLine(newLine);
                 }
             } 
         }
